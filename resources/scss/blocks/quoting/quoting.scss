@@ -1,0 +1,97 @@
+.quoting {
+  margin: 0;
+  background-color: var(--bg-gray);
+
+  // >= 320px
+  @media screen and (min-width: 320px) {
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 24px 20px;
+    border-radius: 0;
+
+    &__row {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__author {
+      flex-basis: 100%;
+      flex-direction: row;
+    }
+
+    &__pic {
+      width: 48px;
+      height: 48px;
+    }
+
+    &__desc {
+      margin: 0 0 0 12px;
+    }
+  }
+
+  // >= 768px
+  @media screen and (min-width: $screen-tablet) {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 16px 32px;
+    border-radius: 20px;
+
+    &__row {
+      flex-direction: row;
+      gap: 32px;
+      align-items: center;
+    }
+
+    &__author {
+      flex-basis: 200px;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__pic {
+      width: 64px;
+      height: 64px;
+    }
+
+    &__desc {
+      margin: 12px 0 0;
+    }
+  }
+
+  &--form {
+    margin-bottom: 32px;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__blockquote {
+    flex-basis: calc(100% - 232px);
+    margin: 0;
+    padding: 0;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+  }
+
+  &__pic {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 100px;
+  }
+
+  &__name {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    // >= 1448px
+    @media screen and (min-width: $screen-desktop-large) {
+      font-size: 18px;
+    }
+  }
+  $p: &;
+}

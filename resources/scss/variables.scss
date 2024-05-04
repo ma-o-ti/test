@@ -1,0 +1,83 @@
+@use "sass:color";
+
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-dark: #1e312f;
+  --color-green: #24ba33;
+  --color-green-secondary: #15cb51;
+  --color-btn: #0eb14f;
+  --color-btn-hover: #15cb51;
+  --color-green-dark: #125754;
+  --color-grey: #d9d9d9;
+  --color-grey-dark: #838d92;
+  --color-gray-dark-light: #838b8e;
+  --color-grey-light: #f4f4f4;
+  --color-pink: #df7599;
+  --color-pink-light: #ffdae6;
+  --color-blue: #b2e8f7;
+  --color-border: #ced3d9;
+  --color-red: #e31849;
+  --color-purple: #8525bf;
+  --color-yellow: #eeb83b;
+  --color-blue: #0292ed;
+  --color-toast-neutral: #838b8e;
+  --color-toast-info: #838b8e;
+  --color-toast-success: #15cb51;
+  --color-toast-error: #e31849;
+  --color-toast-warning: #eeb83b;
+  --bg-primary: #fff;
+  --bg-gray: #f6f7f8;
+  --bg-gray-dark: #eaecee;
+  --bg-green-light: #e2f0e5;
+  --bg-blue-light: #e2e8f0;
+  --body-color: var(--front-primary);
+  --body-bg: var(--back-primary);
+  --swiper-theme-color: #15cb51;
+  --swiper-pagination-bullet-inactive-color: #000;
+  --font-base: var(--font-sans);
+  --font-sans:
+    proximanova,
+    -apple-system,
+    blinkmacsystemfont,
+    "Segoe UI",
+    "Roboto",
+    "Ubuntu",
+    "Droid Sans",
+    "Helvetica Neue",
+    arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  --font-serif: georgia, "Times New Roman", times, serif;
+  --font-mono: sfmono-regular, menlo, monaco, consolas, liberation mono, "Courier New", monospace;
+  --font-size-root: 100%;
+  --font-size-base: 1rem;
+  --font-weight-base: 400;
+  --font-weight-semibold: 600;
+  --line-height-base: 1.2;
+  --color-checkbox-white: #fff;
+  --color-checkbox-black: #000;
+  --color-checkbox-red: #e31849;
+  --color-checkbox-brown: #5e2913;
+  --color-checkbox-grey: #838b8e;
+  --color-checkbox-green: #15cb51;
+  --color-checkbox-blue: #2135eb;
+  --color-checkbox-yellow: #eeb83b;
+  --color-checkbox-orange: #f47a09;
+  --color-checkbox-cyan: #5da6ea;
+  --color-checkbox-pink: #df7599;
+  --color-checkbox-green-light: #6de488;
+  --color-checkbox-gold: radial-gradient(50% 50% at 50% 50%, rgba(255 226 183 / 0%) 0%, rgb(242 186 102) 100%);
+  --color-checkbox-silver: radial-gradient(50% 50% at 50% 50%, rgba(241 241 241 / 0%) 0%, rgb(208 205 201) 100%);
+  --color-checkbox-colorful: conic-gradient(from 180deg at 50% 50%, #f62727 0deg, #f47a09 45deg, #f2c311 90.08deg, #0de55f 135deg, #40ede2 180deg, #2135eb 225deg, #981ae5 270deg, #ea2099 315deg, #f62727 360deg);
+}
+
+$screen-mobile: 360px;
+$screen-tablet: 768px;
+$screen-desktop: 1024px;
+$screen-desktop-large: 1448px;
+$radius-field: 8px;
+$transition-primary: 0.3s;
+$box-shadow-primary: 0 16px 24px 0 rgb(0 0 0 / 8%);

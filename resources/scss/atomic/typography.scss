@@ -1,0 +1,80 @@
+// --- Text decoration ---
+.underline {
+  text-decoration-line: underline;
+}
+
+.overline {
+  text-decoration-line: overline;
+}
+
+.line-through {
+  text-decoration-line: line-through;
+}
+
+.no-underline {
+  text-decoration-line: none;
+}
+
+// style
+.decoration {
+  &-solid {
+    text-decoration-style: solid;
+  }
+
+  &-double {
+    text-decoration-style: double;
+  }
+
+  &-dotted {
+    text-decoration-style: dotted;
+  }
+
+  &-dashed {
+    text-decoration-style: dashed;
+  }
+
+  &-wavy {
+    text-decoration-style: wavy;
+  }
+}
+// --- /Text decoration ---
+
+// --- Font ---
+.font {
+  &-thin {
+    font-weight: 100;
+  }
+
+  &-extralight {
+    font-weight: 200;
+  }
+
+  &-light {
+    font-weight: 300;
+  }
+
+  &-normal {
+    font-weight: 400;
+  }
+
+  &-medium {
+    font-weight: 500;
+  }
+
+  &-semibold {
+    font-weight: 600;
+  }
+
+  &-bold {
+    font-weight: 700;
+  }
+
+  &-extrabold {
+    font-weight: 800;
+  }
+
+  &-black {
+    font-weight: 900;
+  }
+}
+// --- /Font ---

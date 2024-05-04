@@ -1,0 +1,20 @@
+.city-info {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  @media screen and (min-width: $screen-desktop) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__icon {
+    gap: 8px !important;
+  }
+
+  &__title,
+  &__icon {
+    font-weight: 600;
+    font-size: 16px !important;
+  }
+}

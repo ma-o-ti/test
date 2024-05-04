@@ -1,0 +1,10 @@
+.icon {
+  $block-name: &; // #{$block-name}__element
+
+  color: inherit;
+  fill: none;
+
+  &--invert {
+    color: var(--color-grayscale-0);
+  }
+}

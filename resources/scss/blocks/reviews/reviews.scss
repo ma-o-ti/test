@@ -1,0 +1,30 @@
+.reviews {
+  &__intro {
+    margin: 0 0 16px;
+  }
+
+  &__main {
+    margin: 24px 0;
+    // >= 768px
+    @media screen and (min-width: $screen-tablet) {
+      margin: 32px 0;
+    }
+  }
+
+  &__add {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 16px;
+    // >= 768px
+    @media screen and (min-width: $screen-tablet) {
+      width: auto;
+      padding: 8px 32px;
+    }
+
+    // >= 1024px
+    @media screen and (min-width: $screen-desktop) {
+      padding: 11px 40px;
+      font-size: 18px;
+    }
+  }
+}

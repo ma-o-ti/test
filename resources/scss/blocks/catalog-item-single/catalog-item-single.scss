@@ -1,0 +1,462 @@
+.catalog-item {
+  $this: &;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: 20px;
+  transition: all $transition-primary;
+
+  @media screen and (min-width: $screen-desktop-large) {
+    &:hover {
+      z-index: 10;
+      transform: scale(1.05);
+
+      .slider-pagination {
+        opacity: 1;
+      }
+
+      #{$this} {
+        &__info {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+        }
+
+        &__id,
+        &__buy {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .slider {
+    &-button {
+      display: none;
+    }
+
+    &-pagination {
+      opacity: 0;
+
+      @media screen and (min-width: $screen-desktop-large) {
+        bottom: 12px;
+        display: flex;
+        padding-right: 12px;
+        padding-left: 12px;
+      }
+    }
+  }
+
+  .swiper-pagination-bullet {
+    @media screen and (min-width: $screen-desktop-large) {
+      flex: 1 1 0px;
+      height: 4px;
+      border-radius: 1px;
+      transform: scale(1);
+    }
+  }
+
+  &__top {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__slider {
+    overflow: hidden;
+    border-radius: 20px;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      height: 345px;
+    }
+
+    .detail-collections & {
+      // >= 768px
+      @media screen and (min-width: $screen-tablet) {
+        .swiper {
+          &-pagination {
+            bottom: 12px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+
+            &-bullet {
+              flex-grow: 1;
+              height: 4px;
+              border-radius: 1px;
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #{$this}--card & {
+      height: 320px;
+    }
+  }
+
+  &__pic {
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 24px 16px;
+    font-size: 14px;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    // >= 1448px
+    @media screen and (min-width: $screen-desktop-large) {
+      padding: 24px;
+    }
+    $p: &;
+
+    &-wrap {
+      position: relative;
+      display: flex;
+      flex: 1 0 auto;
+    }
+
+    &-box {
+      &--top {
+        flex: 1 0 auto;
+      }
+
+      &--center {
+        #{$p}-line {
+          &+#{$p}-line {
+            margin-top: 8px;
+          }
+        }
+      }
+
+      &--bottom {
+        #{$p}-line {
+          &+#{$p}-line {
+            margin-top: 16px;
+          }
+        }
+      }
+      &+#{$p}-box {
+        margin-top: 12px;
+        //>= 768px
+        @media screen and (min-width: $screen-tablet) {
+          margin-top: 16px;
+        }
+      }
+    }
+
+    &-row {
+      display: flex;
+      gap: 8px 16px;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    gap: 4px;
+    padding: 0 16px;
+    overflow-x: auto;
+
+    @media screen and (min-width: $screen-desktop) {
+      flex-wrap: wrap;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+    }
+  }
+
+  &__title {
+    display: block;
+    font-weight: 600;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__price {
+    &-sale {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    &-actual {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      color: var(--color-grey-dark-light);
+      font-size: 16px;
+
+      span {
+        color: var(--color-dark);
+      }
+    }
+  }
+
+  &__color {
+    overflow: hidden;
+    border: 1px solid rgba(#ced3d9, 0.56);
+    border-radius: 30px;
+
+    &-wrap {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    &-note {
+      color: var(--color-grey-dark-light);
+    }
+  }
+
+  &__id {
+    color: var(--color-grey-dark);
+    // >= 1448px
+    @media screen and (min-width: $screen-desktop-large) {
+      display: none;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    width: 24px;
+    height: 24px;
+    color: var(--color-grey-dark-light);
+
+    &--active {
+      color: var(--color-btn-hover);
+    }
+
+    .wrap-icon {
+      width: 24px;
+      height: 24px;
+
+      .icon {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--color-black);
+    }
+  }
+
+  &__main-link {
+    width: 100%;
+    padding: 8px 14px;
+    font-size: 16px;
+    white-space: nowrap;
+
+    // <= 768px - 1px
+    @media screen and (max-width: calc($screen-tablet - 1px)) {
+      #{$this}--singl & {
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        font-size: 0;
+        background-color: var(--color-btn);
+        border-color: var(--color-btn);
+
+        .svg {
+          display: block;
+          margin: 0;
+        }
+      }
+    }
+
+    // >= 768px
+    @media screen and (min-width: $screen-tablet) {
+      #{$this}--singl & {
+        width: 104px;
+      }
+    }
+
+    // >= 1448px
+    @media screen and (min-width: $screen-desktop-large) {
+      #{$this}--singl & {
+        width: 144px;
+      }
+    }
+
+    .svg {
+      display: none;
+    }
+  }
+
+  &__number {
+    color: var(--color-grey-dark);
+
+    span {
+      color: var(--color-green);
+    }
+  }
+
+  &__selector {
+    .quantity-selector {
+      &__trigger {
+        background-color: var(--bg-gray);
+        fill: var(--color-black);
+      }
+    }
+  }
+
+  &__buy {
+    // >= 1448px
+    @media screen and (min-width: $screen-desktop-large) {
+      display: none;
+      #{$this}--singl & {
+        display: block;
+      }
+    }
+  }
+  $this: &;
+
+  &-sizes {
+    color: var(--color-grey-dark);
+    fill: var(--color-grey-dark);
+
+    &--product-page {
+      .catalog-item-sizes__col {
+        color: var(--color-black);
+      }
+
+      .catalog-item-sizes__icon {
+        color: var(--color-grey-dark);
+      }
+    }
+
+    &__row,
+    &__col {
+      display: flex;
+      align-items: center;
+    }
+
+    &__row {
+      flex-wrap: wrap;
+      gap: 8px 12px;
+
+      &--product-page {
+        margin-right: 20px;
+        padding: 10px 12px;
+        border-radius: 8px;
+
+        &:hover {
+          background-color: var(--color-white);
+        }
+      }
+    }
+
+    &__icon {
+      width: 12px;
+      min-width: 12px;
+      height: 12px;
+      margin-right: 4px;
+
+      .sq & {
+        transform: rotate(-45deg);
+      }
+
+      .h & {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+// types
+.catalog-item {
+  $this: &;
+
+  //card
+  &--card {
+    min-height: auto;
+  }
+
+  &--singl {
+    #{$this} {
+      &__id {
+        // >= 1448px
+        @media screen and (min-width: $screen-desktop-large) {
+          display: block;
+        }
+      }
+
+      &__info {
+        &-col {
+          // >= 768px
+          @media screen and (min-width: $screen-tablet) {
+            flex-grow: 1;
+          }
+        }
+      }
+
+      &__main-link {
+        // <= 768px - 1px
+        @media screen and (max-width: calc($screen-tablet - 1px)) {
+          width: 40px;
+          height: 40px;
+          color: #fff;
+          font-size: 0;
+          background-color: var(--color-btn);
+          border-color: var(--color-btn);
+
+          .svg {
+            display: block;
+            margin: 0;
+          }
+        }
+
+        // >= 768px
+        @media screen and (min-width: $screen-tablet) {
+          width: 104px;
+        }
+
+        // >= 1448px
+        @media screen and (min-width: $screen-desktop-large) {
+          width: 144px;
+        }
+      }
+    }
+  }
+  $this: &;
+}

@@ -1,0 +1,44 @@
+.star-rating-dynamic {
+  $p: &;
+
+  &__group {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    transform: rotateY(180deg);
+  }
+
+  &__label {
+    cursor: pointer;
+    & ~ #{$p}__label {
+      margin-left: 2px;
+    }
+  }
+
+  &__field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.5px;
+    height: 0.5px;
+    opacity: 0;
+
+    &:checked {
+      & ~ #{$p}__label {
+        background-color: var(--rating-color);
+        mask-image: url("../img/icon-star-full.svg");
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-grey-dark);
+    mask-image: url("../img/icon-star-stroke.svg");
+    mask-size: contain;
+  }
+}

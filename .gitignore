@@ -1,0 +1,11 @@
+.idea/
+/node_modules
+/public/assets/svg/symbol
+/public/page
+/vendor
+/var
+composer.lock
+package-lock.json
+.env
+.env.local
+/build

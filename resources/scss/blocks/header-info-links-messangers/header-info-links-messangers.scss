@@ -1,0 +1,15 @@
+.header-info-links-messangers {
+  display: block !important;
+
+  @media screen and (min-width: $screen-tablet) {
+    column-count: 2;
+  }
+
+  @media screen and (min-width: $screen-desktop) {
+    display: none !important;
+
+    &--open {
+      display: flex !important;
+    }
+  }
+}

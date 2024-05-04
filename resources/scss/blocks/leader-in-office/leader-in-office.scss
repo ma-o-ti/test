@@ -1,0 +1,134 @@
+.leader-in-office {
+  &__title {
+    margin-bottom: 16px;
+    font-size: 24px;
+    text-align: center;
+
+    @media screen and (min-width: $screen-tablet) {
+      font-size: 28px;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      font-size: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      font-size: 40px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-align: center;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      margin-bottom: 40px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @media screen and (min-width: $screen-tablet) {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      gap: 32px;
+    }
+  }
+
+  &__grid-item {
+    overflow: hidden;
+    direction: rtl;
+    background-color: var(--bg-gray-dark);
+    border-radius: 20px;
+
+    @media screen and (min-width: $screen-desktop) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &--col-2 {
+      @media screen and (min-width: $screen-tablet) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    }
+
+    &--bg-green {
+      background-color: var(--bg-green-light);
+    }
+
+    &--bg-blue {
+      background-color: var(--bg-blue-light);
+    }
+  }
+
+  &__item-row {
+    display: flex;
+  }
+
+  &__item-container {
+    padding: 24px;
+    text-align: left;
+
+    @media screen and (min-width: $screen-desktop) {
+      padding: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      padding: 40px;
+    }
+
+    p {
+      line-height: 1.428;
+
+      @media screen and (min-width: $screen-tablet) {
+        font-size: 14px;
+      }
+
+      @media screen and (min-width: $screen-desktop-large) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__item-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 20px;
+
+    @media screen and (min-width: $screen-tablet) {
+      width: auto;
+      min-height: auto;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      height: 100%;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 12px;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-bottom: 16px;
+    }
+  }
+  $this: &;
+}

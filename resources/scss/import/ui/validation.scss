@@ -1,0 +1,24 @@
+.validation {
+  &-field {
+    //&--valid {
+    //  border-color: var(--color-green-secondary) !important;
+    //}
+
+    &--invalid {
+      border-color: var(--color-red) !important;
+    }
+  }
+
+  &-message {
+    font-size: 14px;
+    line-height: 20px;
+
+    &--show {
+      margin: 8px 0 0;
+    }
+
+    &--error {
+      color: var(--color-red);
+    }
+  }
+}

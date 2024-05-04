@@ -1,0 +1,44 @@
+.header-info-links {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 32px;
+
+  @media screen and (min-width: $screen-tablet) {
+    gap: 0 20px;
+  }
+
+  @media screen and (min-width: $screen-desktop) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (min-width: $screen-desktop-large) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0 32px;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--company {
+    justify-content: space-between;
+
+    @media screen and (min-width: $screen-desktop) {
+      display: grid !important;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &--open {
+    display: grid !important;
+  }
+
+  &__item {
+    min-height: 40px;
+    padding: 10px 0;
+
+    @media screen and (min-width: $screen-desktop) {
+      min-width: 166px;
+    }
+  }
+}

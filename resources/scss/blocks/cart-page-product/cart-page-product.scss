@@ -1,0 +1,235 @@
+.cart-page-product {
+  $this: &;
+
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  @media screen and (min-width: $screen-tablet) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  @media screen and (min-width: $screen-desktop-large) {
+    gap: 32px;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .quantity-selector__trigger {
+    flex-shrink: 0;
+    background-color: var(--bg-gray);
+    fill: var(--color-black);
+
+    @media screen and (min-width: $screen-desktop-large) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  .catalog-item-sizes,
+  .catalog-item__color-row {
+    font-size: 14px;
+  }
+
+  &__price {
+    display: block;
+    font-size: 20px;
+    line-height: 1.1;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      font-size: 24px;
+      line-height: 1;
+    }
+  }
+
+  &__price-old {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--color-gray-dark-light);
+    font-size: 12px;
+    line-height: 1;
+    text-decoration: line-through;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      font-size: 14px;
+      line-height: 1.14286;
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+
+    @media screen and (min-width: $screen-tablet) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__icon-link {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-gray);
+    border: none;
+    border-radius: 80px;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 16px;
+
+    @media screen and (min-width: $screen-tablet) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      flex-direction: row;
+      gap: 32px;
+      align-items: center;
+    }
+  }
+
+  &__center-top {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 8px;
+  }
+
+  &__center-bottom {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $screen-desktop) {
+      flex-direction: row;
+      gap: 32px;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      justify-content: flex-start;
+      width: auto;
+    }
+  }
+
+  &__mobile-fixed {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 24px 0 rgb(0 0 0 / 8%);
+
+    @media screen and (min-width: $screen-desktop) {
+      position: unset;
+      display: block;
+      padding: 0;
+      background-color: transparent;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__mobile-fixed-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__quantity-title {
+    margin-bottom: 16px;
+
+    @media screen and (min-width: $screen-desktop) {
+      display: none;
+    }
+  }
+
+  &__mobile-fixed-links {
+    display: flex;
+    gap: 16px;
+
+    @media screen and (min-width: $screen-tablet) {
+      gap: 24px;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      display: none;
+    }
+  }
+
+  &__title {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+
+    @media screen and (min-width: $screen-tablet) {
+      font-size: 18px;
+      line-height: 1.444;
+    }
+  }
+
+  &__wrap-price {
+    min-width: 160px;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      min-width: 128px;
+    }
+  }
+
+  &__icon-more {
+    @media screen and (min-width: $screen-desktop) {
+      display: none;
+    }
+  }
+
+  &__right {
+    #{$this} {
+      &__icon-link {
+        &:not(.cart-page-product__icon-more) {
+          display: none;
+
+          @media screen and (min-width: $screen-desktop) {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  $this: &;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--color-border);
+  }
+}

@@ -1,0 +1,14 @@
+.soc-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+}

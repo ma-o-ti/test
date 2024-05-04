@@ -1,0 +1,251 @@
+.submenu {
+  $this: &;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -100;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-gray);
+  //height: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+
+  @media screen and (min-width: $screen-desktop) {
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 24px 24px 0 rgb(0 0 0 / 8%);
+  }
+
+  @media screen and (min-width: $screen-desktop) {
+    top: 100%;
+  }
+
+  &--open {
+    z-index: 100;
+    display: block;
+    height: auto;
+    min-height: 100vh;
+    opacity: 1;
+    pointer-events: auto;
+
+    @media screen and (min-width: $screen-desktop) {
+      min-height: auto;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 12px 0 0;
+
+    @media screen and (min-width: $screen-tablet) {
+      padding: 16px 0;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      min-height: auto;
+      padding: 24px 0 32px;
+    }
+  }
+
+  &__tabs-labels {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--color-border);
+
+    @media screen and (min-width: $screen-desktop) {
+      display: none;
+    }
+
+    &--hide {
+      display: none !important;
+    }
+  }
+
+  &__tab-link {
+    min-height: auto;
+    padding-top: 0 !important;
+    padding-bottom: 8px !important;
+    white-space: nowrap;
+    border-bottom: 1px solid transparent;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.tabs__label--active {
+      border-bottom: 1px solid var(--color-green);
+    }
+  }
+
+  &__wrap-bottom {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: var(--color-white);
+
+    @media screen and (min-width: $screen-tablet) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      display: block;
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: transparent;
+    }
+
+    &--hide {
+      display: none !important;
+    }
+  }
+
+  &__city-info {
+    display: flex;
+    gap: 24px;
+
+    @media screen and (min-width: $screen-desktop) {
+      display: none;
+    }
+  }
+
+  &__tab-link-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--close {
+      display: none !important;
+    }
+  }
+
+  &__info-links {
+    width: 100%;
+  }
+
+  &__tab-link-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__panes-inner {
+    display: none;
+    width: 100%;
+
+    @media screen and (min-width: $screen-desktop) {
+      display: block;
+    }
+
+    &--open {
+      position: relative;
+      display: block;
+
+      .header__tab-ul {
+        display: block;
+      }
+    }
+  }
+
+  &__pane-row {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: $screen-tablet) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 20px;
+      max-width: 976px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      gap: 0 32px;
+    }
+  }
+
+  &__pane-title {
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 22px;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-bottom: 12px;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      display: none;
+    }
+  }
+
+  &__back-btn {
+    display: none;
+    border: none;
+    outline: none;
+  }
+
+  &__top {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+
+    @media screen and (min-width: $screen-tablet) {
+      padding-bottom: 16px;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      display: none;
+    }
+
+    &--submenu {
+      #{$this} {
+        &__back-btn {
+          display: flex;
+        }
+      }
+
+      .header__logo {
+        display: none;
+      }
+    }
+  }
+
+  &__scroll-wrap {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-height: calc(100vh - 62px);
+    overflow-y: auto;
+
+    @media screen and (min-width: $screen-desktop) {
+      max-height: none;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: $screen-tablet) {
+      display: block;
+      gap: 0 20px;
+      margin-bottom: 24px;
+      column-count: 2;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      display: none;
+    }
+  }
+}

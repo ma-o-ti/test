@@ -1,0 +1,40 @@
+.popup-auth {
+  .popup__title {
+    margin-bottom: 27px;
+  }
+
+  &__text {
+    font-family: ProximaNova, sans-serif;
+    white-space: nowrap;
+  }
+
+  &__tel {
+    margin-top: 10px;
+  }
+
+  &__tel-example {
+    margin-top: 5px;
+  }
+
+  &__reset {
+    align-self: flex-start;
+    padding: 9px 9px 9px 0;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+  }
+
+  &__verification-warning {
+    margin-top: 32px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  &__verification-code {
+    margin-top: 30px;
+  }
+
+  &__verification-button {
+    margin-top: 16px;
+  }
+}

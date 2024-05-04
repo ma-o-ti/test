@@ -1,0 +1,40 @@
+{
+	"name": "rmphp/skeleton",
+	"type": "project",
+	"license": "proprietary",
+	"minimum-stability": "dev",
+	"prefer-stable" : true,
+	"require": {
+		"php": "^8.1",
+		"ext-json": "*",
+		"ext-yaml": "*",
+		"laminas/laminas-diactoros": "^2.5",
+		"monolog/monolog": "^2.3",
+		"php-di/php-di": "^6.3",
+		"ramsey/uuid": "^4.7",
+		"rmphp/cache-file": "^1.0",
+		"rmphp/content": "^3.1",
+		"rmphp/kernel": "^4.1",
+		"rmphp/router": "^1.2",
+		"rmphp/session": "^1.0",
+		"rmphp/storage": "^3.1",
+		"symfony/dotenv": "^6.2"
+	},
+    "autoload": {
+        "psr-4": {
+	        "App\\": "src",
+	        "Base\\": "application/src"
+        }
+    },
+	"scripts": {
+		"start": "php -S localhost:8080 -t public"
+	},
+	"config": {
+		"sort-packages": true,
+		"process-timeout":0
+	},
+	"require-dev": {
+		"symfony/var-dumper": "^5.3",
+		"rmphp/var-damper": "^1.0"
+	}
+}

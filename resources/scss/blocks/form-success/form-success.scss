@@ -1,0 +1,57 @@
+.form-success {
+  &__title {
+    margin-bottom: 24px;
+    text-align: center;
+
+    @media screen and (min-width: $screen-desktop) {
+      margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__contnet {
+    padding: 24px 20px;
+    background-color: var(--color-white);
+    border-radius: 20px;
+
+    @media screen and (min-width: $screen-tablet) {
+      padding: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      padding: 40px;
+    }
+  }
+
+  &__contnet-title {
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    margin-bottom: 24px;
+    font-size: 14px;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media screen and (min-width: $screen-tablet) {
+      flex-direction: row;
+      gap: 24px;
+    }
+  }
+}

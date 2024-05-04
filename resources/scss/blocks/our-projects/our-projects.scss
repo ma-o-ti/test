@@ -1,0 +1,83 @@
+.our-projects {
+  &__title {
+    margin-bottom: 24px;
+    font-size: 22px;
+    line-height: 1.33;
+    text-align: center;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-bottom: 32px;
+      font-size: 28px;
+      line-height: 1.28;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      font-size: 32px;
+      line-height: 1.25;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      margin-bottom: 40px;
+      font-size: 40px;
+      line-height: 1.2;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @media screen and (min-width: $screen-tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    max-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media screen and (min-width: $screen-tablet) {
+      max-width: none;
+    }
+  }
+
+  &__item-img {
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 16px;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-bottom: 24px;
+      border-radius: 20px;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 12px;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-bottom: 16px;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__item-text {
+    font-size: 14px;
+    line-height: 1.42;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  }
+}

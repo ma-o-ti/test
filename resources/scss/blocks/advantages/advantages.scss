@@ -1,0 +1,88 @@
+.advantages {
+  &__title {
+    margin-bottom: 16px;
+    text-align: center;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @media screen and (min-width: $screen-tablet) {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      gap: 40px 96px;
+    }
+  }
+
+  &__grid-item {
+    display: flex;
+    gap: 20px;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      gap: 32px;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 12px;
+
+    @media screen and (min-width: $screen-tablet) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__item-title-text {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      display: inline-block;
+      margin-left: 8px;
+    }
+  }
+
+  &__item-text {
+    font-size: 14px;
+    line-height: 20px;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__item-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    padding: 16px;
+    background-color: var(--color-white);
+    border-radius: 16px;
+
+    @media screen and (min-width: $screen-tablet) {
+      width: 64px;
+      height: 64px;
+      border-radius: 20px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      width: 88px;
+      height: 88px;
+      padding: 24px;
+    }
+  }
+}

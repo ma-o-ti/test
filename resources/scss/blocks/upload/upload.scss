@@ -1,0 +1,49 @@
+.upload {
+  display: flex;
+  column-gap: 10px;
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--color-gray-dark-light);
+    }
+  }
+
+  &__field {
+    position: absolute;
+    width: 0.5px;
+    height: 0.5px;
+    padding: 0;
+    opacity: 0;
+  }
+
+  &__replace {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    line-height: normal;
+    fill: #323232;
+  }
+
+  &__icon {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    margin-right: 12px;
+  }
+
+  &__close {
+    display: inline-block;
+    padding: 0;
+    border: none;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

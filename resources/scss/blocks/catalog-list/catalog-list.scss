@@ -1,0 +1,88 @@
+.catalog-list {
+  display: grid;
+  gap: 24px 32px;
+  padding-bottom: 24px;
+
+  // >= 320px
+  @media screen and (min-width: 320px) {
+    grid-template-columns: repeat(1, minmax($colMinWidth, 320px));
+    justify-content: center;
+
+    &--horizontal {
+      grid-auto-columns: $colMinWidth;
+      grid-auto-flow: column;
+      grid-template-columns: none;
+      gap: 16px;
+      justify-content: flex-start;
+      margin-right: -20px;
+      margin-left: -20px;
+      padding: 0 20px;
+      overflow-x: auto;
+    }
+  }
+
+  // >= 768px
+  @media screen and (min-width: $screen-tablet) {
+    grid-template-columns: repeat(2, minmax($colMinWidth, 1fr));
+    gap: 32px;
+
+    &--horizontal {
+      grid-auto-columns: 288px;
+      grid-template-columns: minmax(288px, 1fr);
+      margin-right: 0;
+      margin-left: 0;
+      padding: 0;
+    }
+
+    & + .js-show-more-products {
+      margin-top: 32px;
+    }
+  }
+
+  // >= 1024px
+  @media screen and (min-width: $screen-desktop) {
+    grid-template-columns: repeat(3, minmax($colMinWidth, 1fr));
+
+    &--horizontal {
+      grid-template-columns: minmax(288px, 1fr);
+      gap: 32px;
+    }
+
+    & + .js-show-more-products {
+      margin-top: 40px;
+    }
+  }
+
+  // >= 1448px
+  @media screen and (min-width: $screen-desktop-large) {
+    grid-template-columns: repeat(4, minmax($colMinWidth, 1fr));
+    gap: 48px 32px;
+
+    &--horizontal {
+      grid-auto-flow: row;
+      overflow: inherit;
+    }
+
+    & + .js-show-more-products {
+      margin-top: 64px;
+    }
+  }
+
+  &--empty {
+    display: block;
+  }
+
+  .slider-pagination {
+    opacity: 1;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      opacity: 0;
+    }
+  }
+
+  &__note {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  $colMinWidth: 265px;
+}

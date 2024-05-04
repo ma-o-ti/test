@@ -1,0 +1,94 @@
+.catalog-links {
+  $this: &;
+
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  padding-bottom: 16px;
+
+  // >= 1024px
+  @media screen and (min-width: $screen-desktop) {
+    gap: 16px;
+    padding-bottom: 24px;
+  }
+
+  // >= 1448px
+  @media screen and (min-width: $screen-desktop-large) {
+    gap: 24px;
+    padding-bottom: 32px;
+  }
+
+  &--active {
+    #{$this} {
+      &__container {
+        max-height: none;
+      }
+    }
+  }
+
+  &__container {
+    max-height: 32px;
+
+    &::-webkit-scrollbar-track {
+      box-shadow: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+    }
+
+    // >= 320px
+    @media screen and (min-width: 320px) {
+      display: flex;
+      margin-right: -20px;
+      margin-left: -20px;
+      overflow-x: auto;
+    }
+
+    // >= 768px
+    @media screen and (min-width: $screen-tablet) {
+      margin-right: 0;
+      margin-left: 0;
+      overflow: hidden;
+    }
+
+    // >= 1024px
+    @media screen and (min-width: $screen-desktop) {
+      max-height: 36px;
+    }
+  }
+
+  &__btn {
+    display: none;
+
+    @media screen and (min-width: $screen-tablet) {
+      display: block;
+      min-width: 90px;
+      padding: 0;
+      padding-bottom: 6.5px;
+      font-weight: 600;
+      font-size: 14px;
+      white-space: nowrap;
+      text-align: left;
+      border: none;
+      outline: none;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      margin-right: 15px;
+      padding-bottom: 8.5px;
+    }
+
+    @media screen and (min-width: $screen-desktop-large) {
+      min-width: 100px;
+      padding-bottom: 7px;
+      font-size: 16px;
+    }
+  }
+}

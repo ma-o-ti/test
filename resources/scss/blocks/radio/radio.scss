@@ -1,0 +1,115 @@
+@import "../../mixins/text-styles";
+
+.radio {
+  $block-name: &;
+
+  position: relative;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-self: start;
+  padding: 6px 0;
+
+  &--error {
+    #{$block-name}__fake-input {
+      border-color: var(--color-red);
+    }
+  }
+
+  &--stretch {
+    height: 100%;
+
+    .checkbox-col {
+      height: 100%;
+    }
+  }
+
+  &--required {
+    flex-direction: column-reverse;
+    gap: 0;
+    align-items: flex-start;
+  }
+
+  &:hover {
+    .radio__fake-input,
+    .checkbox-col {
+      border-color: var(--color-btn);
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width: 0.5px;
+    height: 0.5px;
+    padding: 0;
+    opacity: 0;
+  }
+
+  &__fake-input {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--color-white) no-repeat center;
+    border: 1px solid var(--color-gray-dark-light);
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+  }
+
+  &__input[disabled] + &__fake-input,
+  &__input[disabled] ~ &__fake-input {
+    border: 1px solid var(--border-button-disabled);
+    cursor: not-allowed;
+  }
+
+  &__input[disabled]:checked + &__fake-input,
+  &__input[disabled]:checked ~ &__fake-input {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &__input:checked + &__fake-input,
+  &__input:checked ~ &__fake-input {
+    border: 7px solid var(--color-btn);
+  }
+
+  &__input:checked + .checkbox-col,
+  &__input:checked ~ .checkbox-col {
+    border: 1px solid var(--color-btn);
+
+    .radio__fake-input {
+      border: 7px solid var(--color-btn);
+    }
+
+    .checkbox-col__text {
+      color: currentcolor;
+    }
+  }
+
+  &__input[disabled]:checked + &__fake-input,
+  &__input[disabled]:checked ~ &__fake-input,
+  &__input[disabled]:checked + .checkbox-col,
+  &__input[disabled]:checked ~ .checkbox-col {
+    opacity: 0.5;
+  }
+
+  &__label {
+    @include checkbox-label;
+
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__input[disabled] ~ &__label {
+    cursor: not-allowed;
+  }
+
+  &__input[disabled] + &__fake-input,
+  &__input[disabled] ~ &__fake-input,
+  &__input[disabled] + .checkbox-col,
+  &__input[disabled] ~ .checkbox-col {
+    background-color: var(--color-grey-light);
+  }
+  $block-name: &; // #{$block-name}__element
+}

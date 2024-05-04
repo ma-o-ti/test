@@ -1,0 +1,15 @@
+.overflow-scroll {
+  &__slide {
+    .swiper-vertical & {
+      width: 100%;
+      height: auto;
+      padding-right: 10px;
+    }
+
+    .swiper-horizontal & {
+      width: auto;
+      height: 100%;
+      padding-bottom: 10px;
+    }
+  }
+}

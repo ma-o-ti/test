@@ -1,0 +1,125 @@
+.tabs {
+  &__labels {
+    position: relative;
+    display: flex;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      background: transparent;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: 1px;
+      content: "";
+    }
+  }
+
+  &__label {
+    position: relative;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    @media screen and (min-width: $screen-desktop-large) {
+      padding: 12px 0;
+    }
+
+    &--active {
+      z-index: 3;
+      cursor: default;
+    }
+
+    &:hover {
+      @include hover-default;
+    }
+
+    &:hover,
+    &--active {
+      .wrap-icon {
+        @include hover-default;
+      }
+    }
+  }
+
+  &__panes {
+    position: relative;
+    border-top: 0;
+  }
+
+  &__pane {
+    display: none;
+    width: 100%;
+    transform: translateY(16px);
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+
+    &--active {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  $block-name: &; // #{$block-name}__element
+}
+
+//types
+.tabs {
+  &--default {
+    .tabs {
+
+      // >= 320px
+      @media screen and (min-width: 320px) {
+        &__label {
+          & + .tabs__label {
+            margin-left: 10px;
+          }
+        }
+      }
+
+      // >= 768px
+      @media screen and (min-width: $screen-tablet) {
+        &__label {
+          & + .tabs__label {
+            margin-left: 24px;
+          }
+        }
+      }
+
+      // >= 1448px
+      @media screen and (min-width: $screen-desktop-large) {
+        &__label {
+          font-size: 18px;
+        }
+      }
+
+      &__labels {
+        font-weight: 600;
+      }
+
+      &__label {
+        padding: 0 0 8px;
+        font-size: 16px;
+        border-bottom: 2px solid transparent;
+
+        &--active {
+          border-color: var(--color-btn-hover);
+        }
+
+        & + .tabs__label {
+          margin-left: 24px;
+        }
+      }
+    }
+  }
+}

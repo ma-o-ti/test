@@ -1,0 +1,147 @@
+.footer {
+  margin-top: 80px;
+  padding: 32px 0;
+  border-top: 1px solid var(--color-border);
+
+  @media screen and (min-width: $screen-desktop) {
+    margin-top: 104px;
+    padding: 40px 0;
+  }
+
+  @media screen and (min-width: $screen-desktop-large) {
+    margin-top: 120px;
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @media screen and (min-width: $screen-tablet) {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 32px;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 32px;
+    }
+  }
+
+  &__top-left {
+    @media screen and (min-width: $screen-tablet) {
+      flex-basis: 50%;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      display: grid;
+      grid-column-start: 1;
+      grid-column-end: 5;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+
+      .spoiler-wrap__btn {
+        cursor: default;
+      }
+
+      .spoiler-wrap__btn-icon {
+        display: none;
+      }
+    }
+  }
+
+  &__ul {
+    display: none;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: $screen-desktop) {
+      display: block;
+    }
+  }
+
+  &__top-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__main-link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+
+    &--wide {
+      flex-grow: 1;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  &__info {
+    @media screen and (min-width: $screen-tablet) {
+      flex-basis: 50%;
+    }
+  }
+
+  &__info-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    @media screen and (min-width: $screen-tablet) {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+
+      @media screen and (min-width: $screen-desktop) {
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-border);
+
+    @media screen and (min-width: $screen-desktop) {
+      margin-top: 32px;
+      padding-top: 32px;
+    }
+  }
+
+  &__bottom-text {
+    display: block;
+    font-size: 14px;
+
+    @media screen and (min-width: $screen-desktop) {
+      text-align: center;
+    }
+  }
+
+  &__city-title {
+    margin-bottom: 0;
+  }
+
+  &__info-phone {
+    font-weight: var(--font-weight-semibold);
+  }
+}

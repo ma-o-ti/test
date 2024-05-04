@@ -1,0 +1,62 @@
+@import "nouislider/dist/nouislider.css";
+
+.range {
+    $block-name: &; // #{$block-name}__element
+    background: transparent;
+    border: none;
+    padding: 6px 0;
+    box-shadow: none;
+
+    &__inner {
+        height: 4px;
+        padding: 0 8px;
+        background-color: var(--color-border);
+        border: none;
+        border-radius: 2px;
+        box-shadow: none;
+    }
+
+    & .noUi-connects {
+        // stylelint-disable-line
+        background: none;
+        border: none;
+    }
+
+    & .noUi-connect {
+        // stylelint-disable-line
+        background-color: var(--color-btn-hover);
+        height: 4px;
+    }
+
+    & .noUi-handle {
+        // stylelint-disable-line
+        top: -10px;
+        right: -12px;
+        width: 24px;
+        height: 24px;
+        background-color: var(--color-border);
+        border-radius: 18px;
+        box-shadow: none;
+        transition: 0.3s all;
+        cursor: pointer;
+
+        &::before,
+        &::after {
+            content: none;
+        }
+
+        &:hover {
+            background-color: var(--color-btn-hover);
+            border: 1px solid var(--color-btn-hover);
+        }
+
+        &:focus {
+            background-color: var(--color-btn);
+            border: 1px solid var(--color-btn);
+        }
+    }
+
+    & .noUi-base {
+        transform: translateY(-4px);
+    }
+}

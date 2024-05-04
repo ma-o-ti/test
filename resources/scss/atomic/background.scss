@@ -1,0 +1,9 @@
+.bg {
+  &-primary {
+    background-color: var(--bg-primary);
+  }
+
+  &-gray-dark {
+    background-color: var(--bg-gray-dark);
+  }
+}

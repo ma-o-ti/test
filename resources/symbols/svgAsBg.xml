@@ -1,0 +1,12 @@
+<view id="icon__arrow--down-view" viewBox="0 0 24 24"/>
+<use href="#icon__arrow--down" width="24" height="24" x="0" y="0" />
+
+<view id="icon__default-view" viewBox="0 80 24 24"/>
+<use href="#icon__default" width="24" height="24" x="0" y="80" />
+
+<view id="icon__checkbox-view" viewBox="0 160 16 16"/>
+<use href="#icon__checkbox" width="16" height="16" x="0" y="160" />
+
+
+<view id="icon__minus-view" viewBox="0 240 24 24"/>
+<use href="#icon__minus" width="24" height="24" x="0" y="240" />

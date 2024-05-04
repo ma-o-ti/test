@@ -1,0 +1,51 @@
+.breadcrumbs {
+  padding: 4px 0 8px;
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: 8px 0 12px;
+  }
+
+  @media screen and (min-width: $screen-desktop) {
+    padding: 12px 0;
+  }
+
+  @media screen and (min-width: $screen-desktop-large) {
+    padding: 16px 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  &__item {
+    position: relative;
+    font-size: 12px;
+
+    &:last-child {
+      color: var(--color-gray-dark-light);
+    }
+
+    &:not(:first-child) {
+      display: flex;
+      gap: 4px;
+
+      &::before {
+        display: inline-block;
+        width: 5px;
+        margin-left: 1px;
+        color: var(--color-gray-dark-light);
+        content: "/";
+      }
+
+      @media screen and (min-width: $screen-desktop) {
+        gap: 8px;
+      }
+    }
+
+    @media screen and (min-width: $screen-desktop) {
+      font-size: 14px;
+    }
+  }
+}

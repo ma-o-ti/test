@@ -1,0 +1,67 @@
+label {
+  cursor: pointer;
+}
+
+input {
+  &[type="text"],
+  &[type="number"],
+  &[type="email"],
+  &[type="password"],
+  &[type="tel"] {
+    padding: 13.5px 16px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+
+    &::placeholder {
+      color: var(--color-gray-dark-light);
+      font-size: 16px;
+      line-height: 1.2;
+      transition: all $transition-primary;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+
+    &:focus {
+      border-color: var(--color-green);
+    }
+
+    &:disabled {
+      opacity: 0.56;
+    }
+  }
+}
+
+textarea,
+select {
+  padding: 13.5px 16px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  &::placeholder {
+    color: var(--color-gray-dark-light);
+    font-size: 16px;
+    line-height: 1.2;
+    transition: all $transition-primary;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &:focus {
+    border-color: var(--color-green);
+  }
+}
+
+input,
+textarea,
+select {
+  font-size: 16px;
+  font-family: var(--font-base);
+}

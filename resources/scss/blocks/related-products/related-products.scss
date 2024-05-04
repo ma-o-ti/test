@@ -1,0 +1,53 @@
+.related-products {
+  $p: &;
+
+  &__row {
+    display: flex;
+    margin: 0 -20px;
+    padding: 0 20px;
+    overflow-x: auto;
+
+    // >= 768px
+    @media screen and (min-width: $screen-tablet) {
+      margin: 0;
+      padding: 0;
+    }
+
+    // >= 1448px
+    @media screen and (min-width: $screen-desktop-large) {
+      overflow-x: inherit;
+    }
+  }
+
+  &__col {
+    width: calc(100% / 4);
+    min-width: 264px;
+
+    // >= 768px
+    @media screen and (min-width: $screen-tablet) {
+      min-width: 288px;
+
+      &+#{$p}__col {
+        margin-left: 32px;
+      }
+    }
+
+    .slider-pagination {
+
+      // >= 768px
+      @media screen and (min-width: 320px) {
+        opacity: 1;
+      }
+
+      // >= 1448px
+      @media screen and (min-width: $screen-desktop-large) {
+        opacity: 0;
+      }
+    }
+
+    &+#{$p}__col {
+      margin-left: 16px;
+    }
+  }
+  $p: &;
+}

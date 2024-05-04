@@ -1,0 +1,18 @@
+.main-nav-link {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color-gray-dark-light);
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (min-width: $screen-desktop-large) {
+    font-size: 16px;
+  }
+}

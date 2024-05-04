@@ -1,0 +1,14 @@
+.catalog-page {
+  &__btn {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin-right: auto;
+    margin-bottom: 24px;
+    margin-left: auto;
+
+    @media screen and (min-width: $screen-tablet) {
+      width: auto;
+    }
+  }
+}

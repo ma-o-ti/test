@@ -1,0 +1,40 @@
+.tooltip {
+  &-trigger {
+    cursor: pointer;
+  }
+}
+
+.tippy {
+  $p: &;
+
+  &-box {
+    &[data-theme~="light"] {
+      box-shadow: 0 4px 20px 0 rgb(31 36 59 / 8%);
+    }
+
+    &[data-theme~="product"] {
+      overflow: hidden;
+      border-radius: 16px;
+      #{$p} {
+        &-content {
+          padding: 0;
+        }
+      }
+    }
+
+    &:not([data-theme~="product"]) {
+      #{$p} {
+        &-content {
+          max-width: 200px;
+        }
+      }
+    }
+  }
+
+  &-content {
+    padding: 6px 8px;
+    color: var(--black);
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

@@ -21,6 +21,7 @@ const webpack = require("webpack-stream");
 const version = require("gulp-version-number");
 const flatten = require("gulp-flatten");
 const svgSprite = require("gulp-svg-sprite");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 // Глобальные настройки этого запуска
 const mode = process.env.MODE || "development";
@@ -90,7 +91,7 @@ function compileSass() {
 }
 
 function updateCssVersion() {
-  return src(`application/src/Presentation/templates/inc/css.tpl`)
+  return src(`src/**/css.tpl`)
     .pipe(
       version({
         value: "%DT%",
@@ -101,56 +102,60 @@ function updateCssVersion() {
         },
       }),
     )
-    .pipe(dest(`application/src/Presentation/templates/inc/`));
+    .pipe(dest(`src`));
 }
 
 function compileJs() {
-  return src(`resources/js/entry.js`)
-    .pipe(plumber())
-    .pipe(
-      webpack({
-        mode: mode,
-        entry: {
-          bundle: `./resources/js/entry.js`,
-          index: "./resources/js/pages/index.js",
-        },
-        devtool: mode === "development" ? "eval-source-map" : false,
-        output: {
-          filename: "[name].js",
-        },
-        resolve: {
-          alias: {
-            Utils: path.resolve(__dirname, "resources/js/utils/"),
+  return (
+    src(`resources/js/entry.js`)
+      .pipe(plumber())
+      .pipe(
+        webpack({
+          mode: mode,
+          entry: {
+            bundle: `./resources/js/entry.js`,
+            index: "./resources/js/pages/index.js",
           },
-        },
-        module: {
-          rules: [
-            {
-              test: /\.(js)$/,
-              exclude: /(node_modules)/,
-              loader: "babel-loader",
-              options: {
-                presets: ["@babel/preset-env"],
-              },
+          devtool: mode === "development" ? "eval-source-map" : false,
+          output: {
+            filename: "[name].js",
+          },
+          resolve: {
+            alias: {
+              Utils: path.resolve(__dirname, "resources/js/utils/"),
+              Common: path.resolve(__dirname, "resources/js/common/"),
             },
-          ],
-        },
-      }),
-    )
-    .pipe(sourcemaps.init())
-    .pipe(
-      uglify({
-        output: {
-          comments: false,
-        },
-      }),
-    )
-    .pipe(sourcemaps.write("./"))
-    .pipe(dest(`public/assets/js/`));
+          },
+          module: {
+            rules: [
+              {
+                test: /\.(js)$/,
+                exclude: /(node_modules)/,
+                loader: "babel-loader",
+                options: {
+                  presets: ["@babel/preset-env"],
+                },
+              },
+            ],
+          },
+          plugins: [new BundleAnalyzerPlugin()],
+        }),
+      )
+      // .pipe(sourcemaps.init())
+      .pipe(
+        uglify({
+          output: {
+            comments: false,
+          },
+        }),
+      )
+      // .pipe(sourcemaps.write("./"))
+      .pipe(dest(`public/assets/js/`))
+  );
 }
 
 function updateJsVersion() {
-  return src(`application/src/Presentation/templates/inc/js.tpl`)
+  return src(`src/**/js.tpl`)
     .pipe(
       version({
         value: "%DT%",
@@ -161,7 +166,7 @@ function updateJsVersion() {
         },
       }),
     )
-    .pipe(dest(`application/src/Presentation/templates/inc/`));
+    .pipe(dest(`src`));
 }
 
 function copyImages() {
@@ -197,7 +202,7 @@ function reload(done) {
 
 function serve() {
   browserSync.init({
-    proxy: "127.0.0.1:8104",
+    proxy: "127.0.0.1:8080",
     port: 3080,
     open: false,
     notify: false,

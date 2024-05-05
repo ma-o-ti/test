@@ -15,6 +15,8 @@ class IndexController extends AbstractPageController {
 			//$this->addHeader("App-Mode", "Dev");
 			$this->template()->setValue("title", "Главная");
 			$this->template()->setSubtemplate("main", "@main/index.tpl");
+			$this->template()->setSubtemplate("js-bundle", "@main/bundles/js.tpl");
+			$this->template()->setSubtemplate("css-bundle", "@main/bundles/css.tpl");
 		}
 		catch(\Throwable $e){$error = $this->checkError($e);}
 		return $this->render();
